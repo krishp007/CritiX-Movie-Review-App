@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#100F0F"
+    android:orientation="vertical"
+    tools:context=".DetailsActivity"
+    android:id="@+id/detail_container">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/iv_backdrop_path"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_movie"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingVertical="8dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="false"
+                    android:text="Movie Name"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/round_shape"
+                    android:elevation="8dp"
+                    android:padding="8dp"
+                    android:gravity="center">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:elevation="8dp"
+                        android:id="@+id/lottietick"
+                        app:lottie_rawRes="@raw/successtick"
+
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/expandable_text"
+                xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+                expandableTextView:animDuration="1000"
+                expandableTextView:maxCollapsedLines="3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="false"
+                    android:text="Overview"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="normal"
+                    android:layout_marginHorizontal="15dp"
+                    />
+                
+                <ImageButton
+                    android:id="@+id/expand_collapse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    />
+
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#262727"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_release_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="release"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textAlignment="center"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#262727"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_vote_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="rating"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#262727"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="10dp"/>
+
+
+                <TextView
+                    android:id="@+id/tv_rate_movie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rate this Movie"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"/>
+
+                <RatingBar
+                    android:id="@+id/rating"
+                    android:layout_width="480dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="rating bar"
+                    android:numStars="10"
+                    android:progressBackgroundTint="@color/white"
+                    android:progressTint="#FFC107"
+                    android:rating="0"
+                    android:scaleX="0.6"
+                    android:scaleY="0.6"
+                    android:stepSize="0.5" />
+
+                <Button
+                    android:id="@+id/rate_button"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:backgroundTint="#FFB300"
+                    android:text="Rate"
+                    android:textColor="@color/white"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#262727"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="10dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp"
+                    app:cardBackgroundColor="#262727">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:elevation="8dp"
+                            app:cardCornerRadius="30dp">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="@mipmap/icons_round"
+                                android:scaleType="centerCrop"
+                                />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:text="CritiX Premium \nGet unlimited access to all our awesome features"
+                            android:textSize="15sp"
+                            android:textColor="@color/white"/>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_premium"
+                    android:layout_gravity="center"
+                    android:elevation="8dp"
+                    android:layout_marginVertical="20dp"
+                    android:text="Go Premium"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    android:backgroundTint="#1861F3"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

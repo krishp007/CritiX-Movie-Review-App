@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/icons_round"
+        android:label="CritiX"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MovieReview"
+        tools:ignore="ExtraText"
+        tools:targetApi="31">
+        <activity
+            android:name=".PremiumAppActivity"
+            android:exported="false"
+            android:parentActivityName=".DetailsActivity"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".DetailsActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:screenOrientation="nosensor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
