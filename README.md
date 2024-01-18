@@ -2,4 +2,4 @@
 
 CritiX
 
-This app uses Movie API to provide information about any movies you want
+This app uses Movie API(Rapid API) to provide information about any movies you want
